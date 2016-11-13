@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<style name="Mobile Style" vbversion="4.1.9" product="vbcms" type="custom">
+	<templategroup name="vBulletin CMS">
+		<template name="vbcms_bbcode_quote" templatetype="template" date="1321861264" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container ui-body-e">
+			<vb:if condition="$show['username']">
+				<div class="bbcode_postedby">
+					<img src="{vb:stylevar imgdir_misc}/quote_icon.png" alt="{vb:rawphrase quote}" /> {vb:rawphrase originally_posted_by_x, {vb:raw username}}
+					<vb:if condition="$postid"><a href="{vb:raw $vboptions.vbforum_url}{vb:if "$vboptions['vbforum_url']", '/', ''}showthread.php?{vb:raw session.sessionurl}p={vb:raw postid}#post{vb:raw postid}" rel="nofollow"><img class="inlineimg" src="{vb:stylevar imgdir_button}/viewpost-{vb:stylevar right}.png" alt="{vb:rawphrase view_post}" /></a></vb:if>
+				</div>
+				<div class="message">{vb:raw message}</div>
+			<vb:else />
+				{vb:raw message}
+			</vb:if>
+		</div>
+	</div>
+</div>]]></template>
+		<template name="vbcms_comments_block" templatetype="template" date="1298044644" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<h3 class="ui-bar ui-bar-d">{vb:rawphrase comments}</h3>
+{vb:raw pagenav}
+<ol id="posts" class="posts">
+	{vb:raw cms_comments}
+</ol>
+{vb:raw pagenav}]]></template>
+		<template name="vbcms_comments_detail" templatetype="template" date="1298044662" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[{vb:raw postbit}]]></template>
+		<template name="vbcms_comments_page" templatetype="template" date="1309148470" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<vb:if condition="$show_comment_editor"><a href="#" class="articlecommentlink" data-role="button" data-icon="plus" data-inline="true">{vb:rawphrase post_a_comment}</a></vb:if>
+<div class="comments">
+	{vb:raw node_comments}
+
+	<vb:if condition="$show_comment_editor">
+		<form id="form_widget_comments" name="form_widget_comments" action="{vb:raw vboptions.vbforum_url}{vb:if "$vboptions['vbforum_url']", '/', ''}newreply.php?do=postreply&amp;t={vb:raw threadid}&amp;s={vb:raw bbuserinfo.securitytoken}" method="post"  data-ajax="false">
+			
+			<h3 class="ui-bar ui-bar-d">{vb:rawphrase post_a_comment}</h3>
+							
+			{vb:raw usernamecode}
+			{vb:raw human_verify}
+			
+			{vb:raw messagearea}
+			
+			<button type="submit" name="sbutton" data-theme="a">{vb:rawphrase add_comment_button}</button>
+
+			<input type="hidden" name="do" value="postreply" />
+			<input type="hidden" name="nodeid" id="nodeid" value="{vb:raw nodeid}" />
+			<input type="hidden" name="return_node" id="return_node" value="{vb:raw nodeid}" />
+			<input type="hidden" name="current_page" id="current_page" value="{vb:raw pageno}" />
+			<input type="hidden" name="per_page" id="per_page" value="{vb:raw per_page}" />
+			<input type="hidden" name="s" value="{vb:raw session.sessionhash}" />
+			<input type="hidden" name="this_url" value="{vb:raw this_url}" />
+			<input type="hidden" name="securitytoken" value="{vb:raw bbuserinfo.securitytoken}" />
+			<input type="hidden" name="parseurl" value="1" />
+		</form>
+	</vb:if>
+</div>]]></template>
+		<template name="vbcms_content_article_page" templatetype="template" date="1320043462" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<div class="cms_primarycontent">
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase article_detail}</h1>
+</div>
+
+<div data-role="content">
+	<div class="articlebody">
+		<h3 class="articletitle">{vb:raw title}</h3>
+		<vb:if condition="$show['fb_likebutton']">
+			<div>{vb:raw fblikebutton}</div>
+		</vb:if>
+        <vb:if condition="($showpublishdate OR ($showupdated AND $lastupdated) OR ($viewcount AND $showviewcount)) OR $comment_block">
+			<div class="article_username_container">
+				<vb:if condition="$showpublishdate">
+					<vb:if condition="!$published OR !$setpublish">
+						<span style="color:red">
+						<vb:if condition="$publishdate AND $setpublish">
+							{vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+						<vb:else />
+							{vb:rawphrase page_not_published}
+						</vb:if>
+						</span>
+					<vb:elseif condition="$publishdate" />
+						{vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+					</vb:if>
+				</vb:if>
+				<vb:if condition="$showupdated and $lastupdated">
+					&nbsp;{vb:rawphrase updated_on_x {vb:date {vb:raw lastupdated}, {vb:raw dateformat}}}
+					&nbsp;
+				</vb:if>
+				<vb:if condition="$viewcount AND $showviewcount">
+					&nbsp;{vb:rawphrase number_of_views}: {vb:raw viewcount}
+					&nbsp;
+				</vb:if>
+			</div>
+		</vb:if>
+		<div class="articlecomments">
+			<vb:if condition="$comment_block">
+				<a href="#" class="articlecommentlink"><img src="{vb:stylevar imgdir_button}/firstnew-comment.png"> {vb:raw comment_count} <vb:if condition="$blog['comments_visible'] == '1'">{vb:rawphrase comment}<vb:else />{vb:rawphrase comments}</vb:if></a>
+			</vb:if>
+			<vb:if condition="$showtags AND $tag_count">
+				<span class="tags" id="articletagcontainer_{$contentid}">
+					<strong>{vb:rawphrase tags}</strong>:
+					<span id="articletaglist_{vb:raw contentid}">{vb:raw tags}</span>
+				</span>
+			</vb:if>
+		</div>
+		<div id="article_text_{vb:raw node}" class="article ui-body ui-body-d">
+			<blockquote class="articlecontent restore floatcontainer">
+				{vb:raw pagetext}
+			</blockquote>
+		    <vb:if condition="$next_page_url OR $prev_page_url">
+		        <div class="cms_toc_container" data-role="collapsible" data-collapsed="true" data-theme="c">
+	                <vb:each from="pagelist" value="page">
+	                    <vb:if condition="$page['selected']"><h3>{vb:rawphrase pages}: {vb:raw page.title}</h3></vb:if>
+	                </vb:each>
+					<ul data-role="listview" data-theme="d">
+					    <vb:each from="pagelist" value="page">
+					        <li><a href="{vb:raw page.url}">{vb:raw page.title}</a></li>
+					    </vb:each>
+					</ul>
+		      </div>
+		    </vb:if>
+		</div>
+		
+		<vb:if condition="$showattachments">
+		<div class="attachments">
+			<vb:if condition="$thumbnailattachments">
+				<fieldset class="postcontent">
+					<legend><img src="{vb:stylevar imgdir_misc}/paperclip.png" class="inlineimg" alt="{vb:rawphrase attached_thumbnails}" /> {vb:rawphrase attached_thumbnails}</legend>
+					{vb:raw thumbnailattachments}
+				</fieldset>
+			</vb:if>
+			<vb:if condition="$imageattachments">
+				<fieldset class="postcontent">
+					<legend><img src="{vb:stylevar imgdir_misc}/paperclip.png" class="inlineimg" alt="{vb:rawphrase attached_images}" /> {vb:rawphrase attached_images}</legend>
+					{vb:raw imageattachments}
+				</fieldset>
+			</vb:if>
+			<vb:if condition="$imageattachmentlinks">
+				<fieldset class="postcontent">
+					<legend><img src="{vb:stylevar imgdir_misc}/paperclip.png" class="inlineimg" alt="{vb:rawphrase attached_images}" /> {vb:rawphrase attached_images}</legend>
+					<ul>
+					{vb:raw imageattachmentlinks}
+					</ul>
+				</fieldset>
+			</vb:if>
+			<vb:if condition="$otherattachments">
+				<fieldset class="postcontent">
+					<legend><img src="{vb:stylevar imgdir_misc}/paperclip.png" class="inlineimg" alt="{vb:rawphrase attached_files}" /> {vb:rawphrase attached_files}</legend>
+					<ul>
+					{vb:raw otherattachments}
+					</ul>
+				</fieldset>
+			</vb:if>
+		</div>
+		</vb:if>
+
+	</div>
+	
+	{vb:raw comment_block}
+	
+</div>
+
+</div>]]></template>
+		<template name="vbcms_content_article_preview" templatetype="template" date="1313760470" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<li class="postbit postbitim postcontainer" id="entry_{vb:raw blog.blogid}">
+	<div class="posthead ui-bar-c">
+		<h3 class="entrytitle"><a href="{vb:raw page_url}">{vb:raw title}</a></h3>
+        <span class="postdate">
+		 	<vb:if condition="$showuser OR $showpublishdate OR ($viewcount AND $showviewcount) OR ($showrating AND $rating!='')">
+				<vb:if condition="$showuser">
+					{vb:rawphrase by_x_nolink, {vb:raw memberaction_dropdown}}
+				</vb:if>
+
+				<vb:if condition="$showpublishdate">
+		            <vb:if condition="!$published OR !$setpublish">
+		                    <span style="color:red">
+		                    <vb:if condition="$publishdate AND $setpublish">
+		                            {vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+		                    <vb:else />
+		                            {vb:rawphrase page_not_published}
+		                    </vb:if>
+		                    </span>
+		            <vb:elseif condition="$publishdate" />
+		                    {vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+		            </vb:if>
+				</vb:if>
+			</vb:if>
+		</span>
+	</div>
+	
+	<div class="postbody">
+		<div class="postrow">
+			<div class="content">
+				<blockquote class="postcontent restore">
+					{vb:raw previewtext}
+					<vb:if condition="$preview_chopped">...</vb:if>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blogfoot">
+		<div class="comments_count">
+			<vb:if condition="$comment_count">
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external"><img class="inlineimg" src="{vb:stylevar imgdir_button}/firstnew-comment.png" alt="{vb:rawphrase go_to_first_new_comment}" /></a>
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external">{vb:raw comment_count}
+				<vb:if condition="$comment_count == 1">
+					{vb:rawphrase comment}
+				<vb:else />{vb:rawphrase comments}
+				</vb:if></a>
+			</vb:if>
+		</div>
+		
+		<vb:if condition="$preview_chopped">
+			<div class="continuereading"><a href="{vb:raw page_url}">{vb:rawphrase read_more_phrase}</a><img src="{vb:stylevar imgdir_cms}/read_more-{vb:stylevar right}.png" alt="{vb:rawphrase read_more_phrase}" /></div>
+		</vb:if>
+	</div>
+</li>]]></template>
+		<template name="vbcms_content_list" templatetype="template" date="1309778834" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<div class="cms_primarycontent">
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase articles_posts}</h1>
+</div>
+
+<div data-role="content">
+	<div data-role="controlgroup" data-type="horizontal" class="cmssectionbuttongroup">
+		<a href="#" class="cmscategorylink" data-role="button" data-inline="true" data-theme="e">{vb:rawphrase categories}</a>
+		<a href="#" class="cmssectionlink" data-role="button" data-inline="true" data-theme="e">{vb:rawphrase sections}</a>
+	</div>
+	
+	<div class="content_container">
+		<h3 class="ui-bar ui-bar-d">{vb:rawphrase category}: {vb:raw title}</h3>
+
+		<vb:if condition="$content_rendered">
+			{vb:raw content_rendered}
+		<vb:else />
+			<vb:each from="contents" key="id" value="content">
+				{vb:raw content}
+			</vb:each>
+		</vb:if>
+
+		{vb:raw pagenav}
+	</div>
+</div>
+
+</div>]]></template>
+		<template name="vbcms_content_phpeval_page" templatetype="template" date="1317818380" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<div class="cms_primarycontent">
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:raw title}</h1>
+</div>
+
+<div data-role="content">
+	<div class="articlebody">
+		<h3 class="articletitle">{vb:raw title}</h3>
+        <vb:if condition="($showpublishdate OR ($showupdated AND $lastupdated) OR ($viewcount AND $showviewcount)) OR $comment_block">
+			<div class="article_username_container">
+				<vb:if condition="$showpublishdate">
+					<vb:if condition="!$published OR !$setpublish">
+						<span style="color:red">
+						<vb:if condition="$publishdate AND $setpublish">
+							{vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+						<vb:else />
+							{vb:rawphrase page_not_published}
+						</vb:if>
+						</span>
+					<vb:elseif condition="$publishdate" />
+						{vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+					</vb:if>
+				</vb:if>
+				<vb:if condition="$showupdated and $lastupdated">
+					&nbsp;{vb:rawphrase updated_on_x {vb:date {vb:raw lastupdated}, {vb:raw dateformat}}}
+					&nbsp;
+				</vb:if>
+				<vb:if condition="$viewcount AND $showviewcount">
+					&nbsp;{vb:rawphrase number_of_views}: {vb:raw viewcount}
+					&nbsp;
+				</vb:if>
+			</div>
+		</vb:if>
+		<div class="articlecomments">
+			<a href="#" class="articlecommentlink"><img src="{vb:stylevar imgdir_button}/firstnew-comment.png"> {vb:raw comment_count} <vb:if condition="$blog['comments_visible'] == '1'">{vb:rawphrase comment}<vb:else />{vb:rawphrase comments}</vb:if></a>
+			<vb:if condition="$showtags AND $tag_count">
+			<span class="tags" id="articletagcontainer_{$contentid}">
+				<strong>{vb:rawphrase tags}</strong>:
+				<span id="articletaglist_{vb:raw contentid}">{vb:raw tags}</span>
+			</span>
+			</vb:if>
+		</div>
+		<div id="article_text_{vb:raw node}" class="article ui-body ui-body-d">
+			<blockquote class="articlecontent restore floatcontainer">
+				{vb:raw pagetext}
+			</blockquote>
+		    <vb:if condition="$next_page_url OR $prev_page_url">
+		        <div class="cms_toc_container" data-role="collapsible" data-collapsed="true" data-theme="c">
+	                <vb:each from="pagelist" value="page">
+	                    <vb:if condition="$page['selected']"><h3>{vb:rawphrase pages}: {vb:raw page.title}</h3></vb:if>
+	                </vb:each>
+					<ul data-role="listview" data-theme="d">
+					    <vb:each from="pagelist" value="page">
+					        <li><a href="{vb:raw page.url}">{vb:raw page.title}</a></li>
+					    </vb:each>
+					</ul>
+		      </div>
+		    </vb:if>
+		</div>
+		
+	</div>
+	
+	{vb:raw comment_block}
+	
+</div>
+
+</div>]]></template>
+		<template name="vbcms_content_phpeval_preview" templatetype="template" date="1317813934" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<li class="postbit postbitim postcontainer" id="entry_{vb:raw blog.blogid}">
+	<div class="posthead ui-bar-c">
+		<h3 class="entrytitle"><a href="{vb:raw page_url}">{vb:raw title}</a></h3>
+        <span class="postdate">
+		 	<vb:if condition="$showuser OR $showpublishdate OR ($viewcount AND $showviewcount) OR ($showrating AND $rating!='')">
+				<vb:if condition="$showuser">
+					{vb:rawphrase by_x_nolink, {vb:raw memberaction_dropdown}}
+				</vb:if>
+
+				<vb:if condition="$showpublishdate">
+		            <vb:if condition="!$published OR !$setpublish">
+		                    <span style="color:red">
+		                    <vb:if condition="$publishdate AND $setpublish">	
+		                            {vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+		                    <vb:else />
+		                            {vb:rawphrase page_not_published}
+		                    </vb:if>
+		                    </span>
+		            <vb:elseif condition="$publishdate" />
+		                    {vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+		            </vb:if>
+				</vb:if>
+			</vb:if>
+		</span>
+	</div>
+	
+	<div class="postbody">
+		<div class="postrow">
+			<div class="content">
+				<blockquote class="postcontent restore">
+					{vb:raw previewtext}
+					<vb:if condition="$preview_chopped">...</vb:if>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blogfoot">
+		<div class="comments_count">
+			<vb:if condition="$comment_count">
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external"><img class="inlineimg" src="{vb:stylevar imgdir_button}/firstnew-comment.png" alt="{vb:rawphrase go_to_first_new_comment}" /></a>
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external">{vb:raw comment_count}
+				<vb:if condition="$comment_count == 1">
+					{vb:rawphrase comment}
+				<vb:else />{vb:rawphrase comments}
+				</vb:if></a>
+			</vb:if>
+		</div>
+		
+		<vb:if condition="$preview_chopped">
+			<div class="continuereading"><a href="{vb:raw page_url}">{vb:rawphrase read_more_phrase}</a><img src="{vb:stylevar imgdir_cms}/read_more-{vb:stylevar right}.png" alt="{vb:rawphrase read_more_phrase}" /></div>
+		</vb:if>
+	</div>
+</li>]]></template>
+		<template name="vbcms_content_section_page" templatetype="template" date="1309778958" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<div class="cms_primarycontent">
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase articles_posts}</h1>
+</div>
+
+<div data-role="content">
+	<div data-role="controlgroup" data-type="horizontal" class="cmssectionbuttongroup">
+		<a href="#" class="cmscategorylink" data-role="button" data-inline="true" data-theme="e">{vb:rawphrase categories}</a>
+		<a href="#" class="cmssectionlink" data-role="button" data-inline="true" data-theme="e">{vb:rawphrase sections}</a>
+	</div>
+	
+	<div class="content_container">
+		<h3 class="ui-bar ui-bar-d">{vb:raw title}</h3>
+
+		{vb:raw content}
+
+		{vb:raw pagenav}
+	</div>
+</div>
+
+</div>]]></template>
+		<template name="vbcms_content_section_type1" templatetype="template" date="1297699733" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_section_type2" templatetype="template" date="1297699743" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_section_type3" templatetype="template" date="1297699751" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_section_type4" templatetype="template" date="1297699666" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_section_type5" templatetype="template" date="1297699758" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_section_type6" templatetype="template" date="1297699766" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<ol class="articlelist">
+	<vb:each from="contents" value="content">
+	{vb:raw content}
+	</vb:each>
+</ol>]]></template>
+		<template name="vbcms_content_staticpage_page" templatetype="template" date="1317818360" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<div class="cms_primarycontent">
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:raw title}</h1>
+</div>
+
+<div data-role="content">
+	<div class="articlebody">
+		<h3 class="articletitle">{vb:raw title}</h3>
+        <vb:if condition="($showpublishdate OR ($showupdated AND $lastupdated) OR ($viewcount AND $showviewcount)) OR $comment_block">
+			<div class="article_username_container">
+				<vb:if condition="$showpublishdate">
+					<vb:if condition="!$published OR !$setpublish">
+						<span style="color:red">
+						<vb:if condition="$publishdate AND $setpublish">
+							{vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+						<vb:else />
+							{vb:rawphrase page_not_published}
+						</vb:if>
+						</span>
+					<vb:elseif condition="$publishdate" />
+						{vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+					</vb:if>
+				</vb:if>
+				<vb:if condition="$showupdated and $lastupdated">
+					&nbsp;{vb:rawphrase updated_on_x {vb:date {vb:raw lastupdated}, {vb:raw dateformat}}}
+					&nbsp;
+				</vb:if>
+				<vb:if condition="$viewcount AND $showviewcount">
+					&nbsp;{vb:rawphrase number_of_views}: {vb:raw viewcount}
+					&nbsp;
+				</vb:if>
+			</div>
+		</vb:if>
+		<div class="articlecomments">
+			<a href="#" class="articlecommentlink"><img src="{vb:stylevar imgdir_button}/firstnew-comment.png"> {vb:raw comment_count} <vb:if condition="$blog['comments_visible'] == '1'">{vb:rawphrase comment}<vb:else />{vb:rawphrase comments}</vb:if></a>
+			<vb:if condition="$showtags AND $tag_count">
+			<span class="tags" id="articletagcontainer_{$contentid}">
+				<strong>{vb:rawphrase tags}</strong>:
+				<span id="articletaglist_{vb:raw contentid}">{vb:raw tags}</span>
+			</span>
+			</vb:if>
+		</div>
+		<div id="article_text_{vb:raw node}" class="article ui-body ui-body-d">
+			<blockquote class="articlecontent restore floatcontainer">
+				{vb:raw pagetext}
+			</blockquote>
+		    <vb:if condition="$next_page_url OR $prev_page_url">
+		        <div class="cms_toc_container" data-role="collapsible" data-collapsed="true" data-theme="c">
+	                <vb:each from="pagelist" value="page">
+	                    <vb:if condition="$page['selected']"><h3>{vb:rawphrase pages}: {vb:raw page.title}</h3></vb:if>
+	                </vb:each>
+					<ul data-role="listview" data-theme="d">
+					    <vb:each from="pagelist" value="page">
+					        <li><a href="{vb:raw page.url}">{vb:raw page.title}</a></li>
+					    </vb:each>
+					</ul>
+		      </div>
+		    </vb:if>
+		</div>
+		
+	</div>
+	
+	{vb:raw comment_block}
+	
+</div>
+
+</div>]]></template>
+		<template name="vbcms_content_staticpage_preview" templatetype="template" date="1317813880" username="xiaoyu" version="4.1.9 Beta 1"><![CDATA[<li class="postbit postbitim postcontainer" id="entry_{vb:raw blog.blogid}">
+	<div class="posthead ui-bar-c">
+		<h3 class="entrytitle"><a href="{vb:raw page_url}">{vb:raw title}</a></h3>
+        <span class="postdate">
+		 	<vb:if condition="$showuser OR $showpublishdate OR ($viewcount AND $showviewcount) OR ($showrating AND $rating!='')">
+				<vb:if condition="$showuser">
+					{vb:rawphrase by_x_nolink, {vb:raw memberaction_dropdown}}
+				</vb:if>
+
+				<vb:if condition="$showpublishdate">
+		            <vb:if condition="!$published OR !$setpublish">
+		                    <span style="color:red">
+		                    <vb:if condition="$publishdate AND $setpublish">	
+		                            {vb:rawphrase page_will_be_published_x {vb:raw publishdatelocal}} {vb:raw publishtimelocal}
+		                    <vb:else />
+		                            {vb:rawphrase page_not_published}
+		                    </vb:if>
+		                    </span>
+		            <vb:elseif condition="$publishdate" />
+		                    {vb:rawphrase published_on_x {vb:raw publishdatelocal}}  {vb:raw publishtimelocal}
+		            </vb:if>
+				</vb:if>
+			</vb:if>
+		</span>
+	</div>
+	
+	<div class="postbody">
+		<div class="postrow">
+			<div class="content">
+				<blockquote class="postcontent restore">
+					{vb:raw previewtext}
+					<vb:if condition="$preview_chopped">...</vb:if>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blogfoot">
+		<div class="comments_count">
+			<vb:if condition="$comment_count">
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external"><img class="inlineimg" src="{vb:stylevar imgdir_button}/firstnew-comment.png" alt="{vb:rawphrase go_to_first_new_comment}" /></a>
+				<a href="{vb:raw page_url}&amp;new_comment" rel="external">{vb:raw comment_count}
+				<vb:if condition="$comment_count == 1">
+					{vb:rawphrase comment}
+				<vb:else />{vb:rawphrase comments}
+				</vb:if></a>
+			</vb:if>
+		</div>
+		
+		<vb:if condition="$preview_chopped">
+			<div class="continuereading"><a href="{vb:raw page_url}">{vb:rawphrase read_more_phrase}</a><img src="{vb:stylevar imgdir_cms}/read_more-{vb:stylevar right}.png" alt="{vb:rawphrase read_more_phrase}" /></div>
+		</vb:if>
+	</div>
+</li>]]></template>
+		<template name="vbcms_editor_page" templatetype="template" date="1296465533" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase vbulletin_message}</h1>
+</div>
+
+<div data-role="content">	
+	<div class="ui-body ui-body-e">{vb:rawphrase content_not_supported_by_mobile_style, {vb:link forumhome}}</div>
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+		<template name="vbcms_edit_page" templatetype="template" date="1296465545" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase vbulletin_message}</h1>
+</div>
+
+<div data-role="content">	
+	<div class="ui-body ui-body-e">{vb:rawphrase content_not_supported_by_mobile_style, {vb:link forumhome}}</div>
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+		<template name="vbcms_grid_1" templatetype="template" date="1264193636" username="Darren" version="4.1.6 Beta 1"><![CDATA[<h1>Do not use this grid -- it's deprecated</h1>
+
+<div id="gridl3_container">
+	<div id="gridl3_midshift">
+		<div id="gridl3_rightshift">
+			<div id="gridl3_midmask">
+				<div id="gridl3_midcol">
+					<div id="gridl3_content">
+						<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+					</div>
+				</div>
+			</div>
+			<div id="gridl3_leftcol">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div id="gridl3_rightcol">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>]]></template>
+		<template name="vbcms_grid_10" templatetype="template" date="1266336637" username="David Grove" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l50 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_11" templatetype="template" date="1270063755" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-g">
+				<div class="yui-u first yui-panel">
+					<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+				</div>
+				<div class="yui-u yui-panel">
+					<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_12" templatetype="template" date="1270573460" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l50 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_13" templatetype="template" date="1270588094" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-gb">
+			<div class="yui-u first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_14" templatetype="template" date="1270588121" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l30 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l40 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l30 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_15" templatetype="template" date="1270589300" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l30 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l30 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l40 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_16" templatetype="template" date="1270592485" username="ngiaopao" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l30 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l30 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l40 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_2" templatetype="template" date="1264193740" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3" class="yui-tvb-r3">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-gf">
+					<div class="yui-u first yui-panel">
+						<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+					</div>
+					<div class="yui-u yui-panel">
+						<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="yui-b yui-sidebar">
+			<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_3" templatetype="template" date="1264193752" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-gd">
+			<div class="yui-u first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_4" templatetype="template" date="1264193771" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l60 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-r40 yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_5" templatetype="template" date="1264193783" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3" class="yui-tvb-r3">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-u yui-panel">
+					<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+				</div>
+			</div>
+		</div>
+		<div class="yui-b yui-sidebar">
+			<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_6" templatetype="template" date="1264193797" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-gd">
+			<div class="yui-u first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_7" templatetype="template" date="1264193812" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-u first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_8" templatetype="template" date="1264193824" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-gb">
+			<div class="yui-u first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-u yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_grid_9" templatetype="template" date="1264193836" username="Darren" version="4.1.6 Beta 1"><![CDATA[<div id="doc3">
+	<div id="bd">
+		<div class="yui-g">
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column1">$column[1]</ul>
+			</div>
+			<div class="yui-tvb-l50 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column2">$column[2]</ul>
+			</div>
+			<div class="yui-tvb-l25 first yui-panel">
+				<ul class="list_no_decoration widget_list" id="widgetlist_column3">$column[3]</ul>
+			</div>
+		</div>
+	</div>
+</div>
+]]></template>
+		<template name="vbcms_page" templatetype="template" date="1297699118" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div class="vbcms_content">
+{vb:raw layout}
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+		<template name="vbcms_postbit" templatetype="template" date="1298045160" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<li class="postbit postbitim postcontainer vm" id="comment_{vb:raw post.postid}">
+	<div class="posthead ui-bar-c">
+		<a class="postuseravatarlink" href="{vb:link member, {vb:raw post}}">
+			<p>
+			<vb:if condition="$post['avatarurl']">
+				<img src="{vb:raw post.avatarurl}" alt="{vb:rawphrase xs_avatar, {vb:raw post.username}}" />
+			<vb:else />
+				<img src="{vb:stylevar imgdir_misc}/unknown.gif" />
+			</vb:if>
+			</p>
+		</a>
+		<span class="xsaid">{vb:rawphrase x_said, {vb:link member, {vb:raw post}}, {vb:rawphrase {vb:raw response['onlinestatusphrase']}, {vb:raw post.username}}, {vb:raw post.username}}:</span>
+        <span class="postdate">
+			<span class="date">{vb:raw post.postdate}<vb:if condition="!$show['detailedtime']">&nbsp;<span class="time">{vb:raw post.posttime}</span></vb:if></span>
+        </span>
+	</div>
+	
+	<div class="postbody">
+		<div class="postrow">
+			<div class="content">
+				<div id="blog_comment_{vb:raw response.blogtextid}">
+					<blockquote class="postcontent restore">
+						{vb:raw post.message}
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>]]></template>
+		<template name="vbcms_postbit_legacy" templatetype="template" date="1298045974" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<li class="postbit postbitim postcontainer vm" id="comment_{vb:raw post.postid}">
+	<div class="posthead ui-bar-c">
+		<a class="postuseravatarlink" href="{vb:link member, {vb:raw post}}">
+			<p>
+			<vb:if condition="$post['avatarurl']">
+				<img src="{vb:raw post.avatarurl}" alt="{vb:rawphrase xs_avatar, {vb:raw post.username}}" />
+			<vb:else />
+				<img src="{vb:stylevar imgdir_misc}/unknown.gif" />
+			</vb:if>
+			</p>
+		</a>
+		<span class="xsaid">{vb:rawphrase x_said, {vb:link member, {vb:raw post}}, {vb:rawphrase {vb:raw response['onlinestatusphrase']}, {vb:raw post.username}}, {vb:raw post.username}}:</span>
+        <span class="postdate">
+			<span class="date">{vb:raw post.postdate}<vb:if condition="!$show['detailedtime']">&nbsp;<span class="time">{vb:raw post.posttime}</span></vb:if></span>
+        </span>
+	</div>
+	
+	<div class="postbody">
+		<div class="postrow">
+			<div class="content">
+				<div id="blog_comment_{vb:raw response.blogtextid}">
+					<blockquote class="postcontent restore">
+						{vb:raw post.message}
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>]]></template>
+		<template name="vbcms_searchresult_article_general" templatetype="template" date="1314895098" username="Michael" version="4.1.6 Beta 1"><![CDATA[<li class="threadbit threadinfo article ui-li-has-icon" id="vbcms_article_{vb:raw article.contentid}">
+	<div class="ui-li-icon threadstatus"></div>
+	<h3><a href="{vb:raw page_url}">{vb:raw title}</a></h3>
+	<p>
+		{vb:rawphrase published_by_x_y_z_a, {vb:link member, {vb:raw article}}, {vb:raw username}, {vb:raw publishdate}, {vb:raw publishtime}}
+	</p>
+	<vb:if condition="$replycount">
+	<p>
+		{vb:rawphrase last_post_by}: {vb:rawphrase last_post}: <span class="time">{vb:raw lastpostdate}&nbsp;{vb:raw lastpostdatetime}</span> {vb:rawphrase by_x, {vb:link member, {vb:raw lastposterinfo}}, {vb:raw lastposter}}&nbsp;<a href="{vb:raw lastcomment_url}"><img src="{vb:stylevar imgdir_button}/lastpost-{vb:stylevar right}.png" alt="" /></a>
+	</p>
+	</vb:if>
+	<p>
+		<vb:if condition="$categories">
+			{vb:rawphrase categories}:
+			<vb:each from="categories" key="categoryid" value="category">
+<a href="{vb:raw category.category_url}">{vb:raw category.category}</a>&nbsp;
+			</vb:each>
+		</vb:if>
+	</p>
+	<p>
+		<vb:if condition="$tags">
+			{vb:rawphrase tags}:
+			<vb:each from="tags" key="tagid" value="tag">
+				<a href="{vb:raw vboptions.bburl}/tags.php?tag={vb:raw tag.tagtext}">{vb:raw tag.tagtext}</a>&nbsp;
+			</vb:each>
+		</vb:if>
+	</p>
+	<p>
+		{vb:rawphrase comments}: {vb:raw replycount} 
+	</p>
+	<p>
+		{vb:rawphrase vbcms}: <a href="{vb:raw parent_url}" title="{vb:raw parent_url}">{vb:raw parenttitle}</a>
+	</p>
+</li>]]></template>
+		<template name="vbcms_widget_categorynavall_page" templatetype="template" date="1297955037" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<div class="categories">
+	<ul data-role="listview">
+		<li data-role="list-divider">{vb:rawphrase categories}</li>
+		<vb:each from="nodes" key="id" value="content">
+			<li><a href="{vb:raw content.view_url}">{vb:raw content.category}</a><span class="ui-li-count">{vb:raw content.qty}</span></li>
+		</vb:each>
+		<button class="cmscategoriesback">{vb:rawphrase go_back}</button>
+	</ul>
+</div>]]></template>
+		<template name="vbcms_widget_categorynavbu_page" templatetype="template" date="1297954088" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<div class="categories">
+	<ul data-role="listview">
+		<li data-role="list-divider">{vb:rawphrase categories}</li>
+		<vb:each from="nodes" key="id" value="content">
+			<li><a href="{vb:raw content.view_url}">{vb:raw content.category}</a><span class="ui-li-count">{vb:raw content.qty}</span></li>
+		</vb:each>
+		<button class="cmscategoriesback">{vb:rawphrase go_back}</button>
+	</ul>
+</div>]]></template>
+		<template name="vbcms_widget_sectionnavext_page" templatetype="template" date="1297953003" username="xiaoyu" version="4.1.6 Beta 1"><![CDATA[<div class="cmssections">
+	<ul data-role="listview">
+		<li data-role="list-divider">{vb:rawphrase sections}</li>
+		<vb:each from="nodes" key="seq" value="node">
+			<li><a href="{vb:raw node.url}">{vb:raw node.title}</a></li>
+		</vb:each>
+		<button class="cmssectionsback">{vb:rawphrase go_back}</button>
+	</ul>
+</div>]]></template>
+	</templategroup>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+		</stylevars>
+</style>

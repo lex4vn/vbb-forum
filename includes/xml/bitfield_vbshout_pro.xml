@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bitfields product="dbtech_vbshout">
+	<bitfielddefs>
+		<!--
+		<group name="ugp">
+			<group name="dbtech_vbshoutpermissions">
+				<bitfield name="cansilence"			group="dbtech_vbshout_manager_permissions" 	phrase="dbtech_vbshout_can_silence_users"	install="6"				>1024</bitfield>
+				<bitfield name="cansearcharchive"	group="dbtech_vbshout_shoutbox_permissions" phrase="dbtech_vbshout_can_search_archive"	install="2,3,4,5,6,7"	>2048</bitfield>
+				<bitfield name="autoidle"			group="dbtech_vbshout_shoutbox_permissions" phrase="dbtech_vbshout_is_auto_idle"								>4096</bitfield>
+			</group>
+		</group>
+		-->
+		<group name="nocache">
+			<group name="dbtech_vbshout_commands">
+				<bitfield name="dbtech_vbshout_silence_usage"	>16</bitfield>
+			</group>
+			
+			<group name="dbtech_vbshout_editors">
+				<bitfield name="dbtech_vbshout_enable_detach"	>128</bitfield>			
+				<bitfield name="dbtech_vbshout_enable_size"		>256</bitfield>			
+			</group>
+			
+			<group name="dbtech_vbshout_notices">
+				<bitfield name="dbtech_vbshout_post_pings"		>4</bitfield>
+			</group>	
+					
+			<group name="dbtech_vbshout_shoutboxtabs">
+				<bitfield name="dbtech_vbshout_notifications"	>1</bitfield>
+				<bitfield name="dbtech_vbshout_system_messages"	>2</bitfield>
+				<bitfield name="dbtech_vbshout_shout_reports"	>4</bitfield>
+			</group>	
+					
+			<group name="dbtech_vbshout_general_settings">
+				<bitfield name="dbtech_vbshout_enable_pms"		>128</bitfield>
+				<!--<bitfield name="dbtech_vbshout_enable_me"		>256</bitfield>-->
+				<bitfield name="dbtech_vbshout_enable_notifs"	>512</bitfield>
+				<bitfield name="dbtech_vbshout_enable_sysmsg"	>1024</bitfield>
+				<!-- Follow up with higher bit values than the Editor Settings below -->
+				<bitfield name="dbtech_vbshout_enable_override"	>8192</bitfield>				
+				<bitfield name="dbtech_vbshout_shoutsounds"		>16384</bitfield>				
+				<bitfield name="dbtech_vbshout_invitesounds"	>32768</bitfield>				
+				<bitfield name="dbtech_vbshout_pmsounds"		>65536</bitfield>				
+			</group>
+
+			<group name="dbtech_vbshout_editor_settings">
+				<bitfield name="dbtech_vbshout_enable_detach"	>2048</bitfield>			
+				<bitfield name="dbtech_vbshout_enable_clear"	>32</bitfield>
+				<bitfield name="dbtech_vbshout_enable_smilies"  >64</bitfield>
+				<bitfield name="dbtech_vbshout_enable_bold"		>1</bitfield>
+				<bitfield name="dbtech_vbshout_enable_italic"	>2</bitfield>
+				<bitfield name="dbtech_vbshout_enable_underline">4</bitfield>
+				<bitfield name="dbtech_vbshout_enable_font"		>16</bitfield>
+				<bitfield name="dbtech_vbshout_enable_color"	>8</bitfield>
+				<bitfield name="dbtech_vbshout_enable_size"		>4096</bitfield>				
+			</group>
+			
+			<group name="dbtech_vbshoutpermissions">
+				<bitfield name="cansilence"						>1024</bitfield>
+			</group>					
+		</group>
+		
+	</bitfielddefs>
+</bitfields>

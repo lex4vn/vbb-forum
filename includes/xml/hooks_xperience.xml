@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hooks>
+	<hooktype type="xperience40">
+		<hook>xperience_calcdata_begin</hook>
+		<hook>xperience_calcdata_summaries</hook>
+		<hook>xperience_calcdata</hook>
+		<hook>xperience_calcdata_query</hook>
+		<hook>xperience_calcdata_misc</hook>
+		<hook>xperience_calcdata_post</hook>
+		<hook>xperience_calcdata_thread</hook>
+		<hook>xperience_calcdata_user</hook>
+		<hook>xperience_calcdata_stats</hook>
+		<hook>xperience_calcdata_end</hook>
+		<hook>xperience_memberprofile</hook>
+		<hook>xperience_earn_thread</hook>
+		<hook>xperience_earn_post</hook>
+		<hook>xperience_earn_misc</hook>
+		<hook>xperience_earn_user</hook>
+	</hooktype>
+</hooks>

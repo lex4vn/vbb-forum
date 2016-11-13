@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<navgroups product="vtlai_vbb_adsmanagement">
+	<navgroup phrase="vtlai_vbb_adsmanagement" displayorder="11">
+		<navoption displayorder="10">
+			<phrase>vtlai_vbb_ads_loc</phrase>
+			<link>../{$vbulletin->config[Misc][admincpdir]}/vtlai_ads_management.php?do=loc</link>
+		</navoption>
+		<navoption displayorder="20">
+			<phrase>vtlai_vbb_ads_banner</phrase>
+			<link>../{$vbulletin->config[Misc][admincpdir]}/vtlai_ads_management.php?do=banner</link>
+		</navoption>
+		<navoption displayorder="30">
+			<phrase>vtlai_vbb_ads_report</phrase>
+			<link>../{$vbulletin->config[Misc][admincpdir]}/vtlai_ads_management.php?do=report</link>
+		</navoption>
+
+	</navgroup>
+</navgroups>

@@ -1,0 +1,6 @@
+[10-Dec-2010 19:45:14] PHP Parse error:  syntax error, unexpected T_STRING in /home/pklvn/public_html/includes/class_core.php(4411) : eval()'d code on line 256
+[10-Dec-2010 20:42:40] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'vietvbb/topx/class_vietvbbtopx.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pklvn/public_html/global.php(37) : eval()'d code on line 2
+[12-Dec-2010 02:23:57] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/pklvn/public_html/admincp/plugin.php on line 534
+[12-Dec-2010 02:24:16] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/pklvn/public_html/admincp/plugin.php on line 534
+[12-Dec-2010 02:24:39] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/pklvn/public_html/admincp/plugin.php on line 534
+[12-Dec-2010 02:25:32] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/pklvn/public_html/admincp/plugin.php on line 534

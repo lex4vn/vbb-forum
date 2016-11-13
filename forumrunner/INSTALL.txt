@@ -1,0 +1,59 @@
+
+                       Forum Runner Installation
+                   (c) 2010-2011 End of Time Software, LLC
+-----------------------------------------------------------------------------
+
+New Installation
+================
+
+If you're reading this, you have already unarchived the latest version of the
+Forum Runner add-on into your base forum directory.  It will have created a
+'forumrunner' subdirectory where all the add-on files (including this one) are
+located.
+
+The next step is to log into the vBulletin Administrator Control Panel and
+double click on the "Plugins & Products" menu on the left.  Then, click on the
+"Manage Products" command.
+
+At the bottom of the list, you will see "Add/Import Product".  Click this.
+
+In the field "OR import the XML file from your server", enter the text
+"./forumrunner/product-forumrunner.xml" (without the quotes) and make sure
+that "Allow Overwrite" is set to "Yes".  Click "Import".
+
+This installs the Forum Runner add-on completely and you can now go and verify
+your forum through the Forum Manager located at http://www.forumrunner.com.
+
+Upgrading an Existing Installation
+==================================
+
+Simply follow the exact same instructions as above.  Make sure you overwrite
+all files in the 'forumrunner' subdirectory, and when you import the
+product-forumrunner.xml file, make sure the "Allow Overwrite" is set to "Yes".
+
+Forum Runner Settings
+=====================
+
+After importing the product-forumrunner.xml file, you can go to the vBulletin
+Administrator Control Panel and tweak various Forum Runner settings.
+
+Click on the menu item "vBulletin Options->vBulletin Options", then look for
+"Forum Runner Settings" in the list on the right.  Double click this to bring
+up the various Forum Runner settings.
+
+Sphinx Search Support
+=====================
+
+If you use Sphinx for your fulltext searches, please see 
+
+http://www.forumrunner.com/forum/showthread.php?t=32
+
+for instructions on how to install Forum Runner support for Sphinx searching.
+
+Support
+=======
+
+If you have any questions, comments, feature requests, or bugs to report,
+visit out support forums at http://www.forumrunner.com/forum or through the
+Forum Runner app!
+

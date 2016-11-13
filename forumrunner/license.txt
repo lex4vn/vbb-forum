@@ -1,0 +1,84 @@
+FORUM RUNNER LICENSE AGREEMENT
+
+This Software License Agreement ("Agreement") is made and effective between End
+of Time Studios, LLC ("Developer") and the forum owner ("Licensee").
+
+Developer has developed and licenses to users its software program marketed
+under the name Forum Runner (the "Software").
+
+NOW, THEREFORE, in consideration of the mutual promises set forth herein,
+Developer and Licensee agree as follows:
+
+1. License.
+Developer hereby grants to Licensee a perpetual, non-exclusive, limited license
+to use the Software as set forth in this Agreement.
+
+2. Restrictions.
+Licensee shall not modify, copy, duplicate, reproduce, license or sublicense
+the Software, or transfer or convey the Software or any right in the Software
+to anyone else without the prior written consent of Developer.
+
+3. Multiple Copies
+Licensee is authorized to run multiple instances of the Software provided that
+each instance is fully registered using the instructions at
+http://www.forumrunner.com?p=register.  Each instance contains a unique site
+identification number which must be installed properly or else the Forum Runner
+push software will not function for the forum.
+
+4. Warranty Disclaimer.
+DEVELOPER'S WARRANTIES SET FORTH IN THIS AGREEMENT ARE EXCLUSIVE AND ARE IN
+LIEU OF ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+5. Limitation of Liability.
+Developer shall not be responsible for, and shall not pay, any amount of
+incidental, consequential or other indirect damages, whether based on lost
+revenue or otherwise, regardless of whether Developer was advised of the
+possibility of such losses in advance. In no event shall Developer's liability
+hereunder exceed the amount of license fees paid by Licensee, regardless of
+whether Licensee's claim is based on contract, tort, strict liability, product
+liability or otherwise.
+
+6. Severability.
+If any term of this Agreement is held by a court of competent jurisdiction to
+be invalid or unenforceable, then this Agreement, including all of the
+remaining terms, will remain in full force and effect as if such invalid or
+unenforceable term had never been included.
+
+A portion of the source code distributed in the Forum Runner installation is
+owned and copyrighted by JelSoft Enterprises.  This distribution is part of the
+vBulletin Mod (add-on) distribution.  This Software must not be used in any
+vBulletin installation that is not fully compliant with JelSoft's licensing
+agreements.  Do not run this software on illegal copies of JelSoft vBulletin.
+If a forum is listed in the Forum Runner database and it is found to be in
+violation of JelSoft license agreements, it will be removed permanently from
+the database.
+
+FORUM RUNNER BRANDING LICENSE
+
+The following only applies if you have purchased a license for the branded
+version of Forum Runner.
+
+All software provided by End of Time Studios, LLC (Owners of Forum Runner) is
+the property of End of Time Studios, LLC. No modifications are allowed to the
+base add-on code without explicit permission from End of Time Studios, LLC. We
+reserve the right to remove any apps created by End of Time Studios, LLC from
+the app store for any reason, with the sole remedy being a refund of a prorated
+amount of the license fee for the amount of time left in the contract. All
+license fees are non-refundable except for the case stated in the previous
+sentence. If Apple removes the app for any reason, we will do our best to work
+with them to remedy the situation but if Apple refuses to list the app due to
+content violations or some other unforeseen reason, the only recourse will be a
+refund of a prorated amount of the license fee for the amount of time left in
+the contract. End of Time Studios, LLC and Forum Runner reserve the right to
+use your forum name in marketing materials (websites, flyers, forum postings,
+etc). End of Time Software, LLC reserves the right to publish your forum in the
+main Forum Runner directory so users who have purchased the full version of
+Forum Runner can access your forum. While we extensively test our software, End
+of Time Studios, LLC will not be held responsible for any damages done by the
+add-on due to unforeseen conflicts with add-ons installed on existing forums or
+any other unforeseen situations. We work diligently with forum owners to get
+the add-on to work on the multitude of forum installations we encounter. 
+
+The most recent version of this document can always be found online at
+http://www.forumrunner.com/license.txt

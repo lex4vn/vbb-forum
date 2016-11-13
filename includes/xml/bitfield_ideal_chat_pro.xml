@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bitfields product="iwt_idealchat_pro">
+	<bitfielddefs>
+		<group name="ugp">
+			<group name="idealchatpermissions">
+				<bitfield name="canusechat" group="idealchatpermissions"  phrase="can_use_chat">1</bitfield>
+				<bitfield name="canusechatroom" group="idealchatpermissions"  phrase="can_use_chatroom">2</bitfield>
+			</group>
+		</group>
+	</bitfielddefs>
+</bitfields>

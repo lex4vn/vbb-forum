@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<navgroups product="dbtech_vbshout">
+
+	<navgroup phrase="dbtech_vbshout" permissions="canadminvbshout" hr="true" displayorder="16">
+				
+		<navoption displayorder="15">
+			<phrase>dbtech_vbshout_view_silenced_users</phrase>
+			<link>vbshout.php?do=viewsilenced</link>
+		</navoption>
+				
+		<navoption displayorder="20">
+			<phrase>dbtech_vbshout_shout_log</phrase>
+			<link>vbshout.php?do=shoutlog</link>
+		</navoption>
+				
+		<navoption displayorder="30">
+			<phrase>maintenance</phrase>
+			<link>vbshout.php?do=maintenance</link>
+		</navoption>
+		
+	</navgroup>
+	
+</navgroups>

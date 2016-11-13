@@ -1,0 +1,5 @@
+#AuthGroupFile /dev/null
+#AuthName "Vai Lozl"
+#AuthType Basic
+#AuthUserFile /home/pklvn/domains/pkl.vn/.htpasswd/public_html/forum/admincp/.htpasswd
+#require valid-user

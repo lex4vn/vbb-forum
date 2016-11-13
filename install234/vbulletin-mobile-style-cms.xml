@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<style name="Mobile Style" vbversion="4.1.3" product="vbcms" type="custom">
+	<templategroup name="vBulletin CMS">
+		<template name="vbcms_editor_page" templatetype="template" date="1296465533" username="xiaoyu" version="4.1.2"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase vbulletin_message}</h1>
+</div>
+
+<div data-role="content">	
+	<div class="ui-body ui-body-e">{vb:rawphrase content_not_supported_by_mobile_style, {vb:link forumhome}}</div>
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+		<template name="vbcms_edit_page" templatetype="template" date="1296465545" username="xiaoyu" version="4.1.2"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase vbulletin_message}</h1>
+</div>
+
+<div data-role="content">	
+	<div class="ui-body ui-body-e">{vb:rawphrase content_not_supported_by_mobile_style, {vb:link forumhome}}</div>
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+		<template name="vbcms_page" templatetype="template" date="1296463112" username="xiaoyu" version="4.1.2"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+	{vb:raw headinclude}
+	<title>{vb:raw vboptions.bbtitle}</title>
+	{vb:raw headinclude_bottom}
+</head>
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<div id="pagetitle" class="pagetitle ui-bar-b">
+	<h1 class="pagetitle">{vb:rawphrase vbulletin_message}</h1>
+</div>
+
+<div data-role="content">	
+	<div class="ui-body ui-body-e">{vb:rawphrase content_not_supported_by_mobile_style, {vb:link forumhome}}</div>
+</div>
+
+{vb:raw footer}
+
+</body>
+</html>]]></template>
+	</templategroup>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+	</stylevars>
+</style>

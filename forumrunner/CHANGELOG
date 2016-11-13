@@ -1,0 +1,1039 @@
+
+iPhone/iPad/iPod Touch Forum Runner Client
+=============================================================================
+
+1.1
+-----------------------------------------------------------------------------
+* Initial Release of ForumRunner
+
+1.1.1
+-----------------------------------------------------------------------------
+* Fix issue with tabs not saving after being changed via "More"
+* Add ability to jump to last unread post in addition to first or last page
+  of a thread (via "Settings")
+* Add ability to jump to last visited forum when app restarts (via
+  "Settings")
+* [VB4.0] Fixed issue with "Current" showing a popup "Permission denied" if
+  searches are disabled for unregistered users and the user is not logged in.
+* Decrease icon push notification badge when subscribed thread/private message
+  is read (rather than having to reload the 'home page')
+
+1.1.2
+-----------------------------------------------------------------------------
+* When jumping from a push notification into Forum Runner via 'View',
+  jump to the forum that sent you the notification.
+* Fix issue with cancelling attachments before they are done uploading.
+* Fix timeout issue with long-running attachment uploads.
+* Fix issue with "Jump to Last Unread Post" occasionally not scrolling to the
+  correct post.
+* Add "Edit Post" ability while viewing threads
+
+1.1.3
+-----------------------------------------------------------------------------
+* Add favorites toggle to Current tab (still exists in Profile tab as well)
+* Fix issue with icons on launcher being removed in certain cases of
+  favoriting/unfavoriting
+* Add support for forum owners to configure Google AdSense
+* Add "Who's Online" tab
+* UI tweaks
+
+1.1.4
+-----------------------------------------------------------------------------
+* Add support for making subforums Favorite - to use, simply drill down to
+  the subforum you wish to make a favorite, hit the "Action" button in the
+  upper right corner, and choose "Add to Favorites"
+* Added "Help" tab for online help - this will be updated as questions come
+  in.
+* Fix various UI Issues
+* Add setting "Show Thread Preview" which will allow you to disable thread
+  previews and display more threads per page
+* Fix issue with people who declined push notifications just getting a black
+  screen on launch
+
+1.1.5
+-----------------------------------------------------------------------------
+* Initial phpBB support
+* In forums with prefixes, show the prefix in the forum summary
+
+1.2.0
+-----------------------------------------------------------------------------
+* Native iPad Support
+* Add "Home" link to upper right action button for quick "Home" screen access
+* Add "Open in Browser" to upper right action button in thread view for
+  threads that have embedded HTML, etc.
+* Fix a few various UI issues
+
+1.2.1
+-----------------------------------------------------------------------------
+* Add support for iOS 4 fast app switching
+* Add support for Multi-Quote (tap individual post headers to select the posts
+  you wish to multi-quote, then tap "Multi-Quote" from the action menu
+* Fix issue with "Scroll To Top" via tap at top of screen sometimes not
+  working
+
+1.3.0
+-----------------------------------------------------------------------------
+* Add support for various moderation tasks such as stick/unstick threads,
+  open/close threads, delete/move threads, delete posts, etc.  Note this
+  requires an update of the add-on software on the forum to the latest
+  version.
+* Refresh Private Messages/Subscriptions in iOS 4 when app enters foreground
+* Refresh badge count in iOS 4 when app enters foreground
+* Add support for viewing and voting on polls through Forum Runner.  This
+  includes presenting a pie chart with visual breakdown of poll options.
+* Add support for vBulletin 4.0 CMS through Forum Runner (note, target forum
+  must install latest version of add-on and enable CMS support!)
+
+1.3.1
+-----------------------------------------------------------------------------
+* Fix major issue with iPhone 3G/3Gs and forums running Google AdSense
+
+1.3.2
+-----------------------------------------------------------------------------
+* Fix issue with push notification count not being reported properly in
+  certain corner cases
+
+1.3.3
+-----------------------------------------------------------------------------
+* Image attachments/links now appear inline as opposed to all bunched up at
+  the bottom of the post (forum requires plug-in update)
+* Revamp of thread summary - add avatar and more information (forum requires
+  plug-in update)
+* Fix issues with cookie handling and forums with database thread marking
+  disabled
+* Fix issue with not being able to log out old push notification credentials
+  if you changed your password on the website
+* Change color of forum icon depending on presence of unread subforums/threads
+
+1.3.4
+-----------------------------------------------------------------------------
+* Fix an issue with uploaded images coming out tiny when they are configured
+  to be larger
+* Various speed improvements
+
+1.3.5
+-----------------------------------------------------------------------------
+* Add "Pull to Refresh" to all screens.
+* Add "Delete as Spam" and "Ban User" to moderation controls.  To delete
+  thread/posts as spam, in a thread, tap "Action Button", tap "Moderation
+  Menu", tap "Delete Posts" or "Delete Thread", then you will be presented
+  with "Delete as Spam" if you have access.
+
+  To access "Ban User", go to the user's profile you wish to ban and tap "Ban
+  User".
+
+* Add Setting so that the "Current" menu will fetch new posts since your last
+  visit instead of just getting all posts from the past few days.  You can
+  change this setting in:
+
+  iPhone Settings->Forum Runner (Or Branded App)->New Since Last Visit
+
+* Add setting to show signatures of users
+* Fix a couple UI issues
+
+1.3.6
+-----------------------------------------------------------------------------
+* Fix issue with forums that disable attachments completely allowing Forum
+  Runner to attach images
+* Fix issue with "Jump to Last Forum" setting causing some UI issues
+* Fix issue with Removing a Favorite forum and not being able to add it as a
+  favorite again in certain cases
+* Add "Pull Up To Refresh" to the bottom of screens so you can now pull up to
+  refresh if you are at the bottom of the list.
+* Enlarge iPad thumbnails of attached images when in the "See All" screen
+
+1.4.0
+-----------------------------------------------------------------------------
+* Add support for displaying HTML, BBCode markup, and animated smilies in
+  posts by tapping the post body you want to view (Requires forum to update
+  add-on to latest version)
+* Add basic smilie support (more to come)
+* Add total number of posts in a thread to the thread summary.  This will be a
+  gray background if no new posts, or a highlighted color background for new
+  posts.
+* Add support to append Forum Runner signature ("Posted from my <device> using
+  Forum Runner").  This can be enabled in Settings.  The forum owner has the
+  option to disable this feature for their forum.
+* Add support for forum owners to customize icons and color
+* If a forum has prefixes and does not require them, add "No Prefix" option to
+  selector rather than just relying on "Cancel"
+* Add "Report" button for parse errors coming from forums to help narrow down
+  issues
+* Add German localization
+
+1.4.1
+-----------------------------------------------------------------------------
+* Fix issue with some posts not displaying properly (lines not showing up) in
+  thread view
+* Fix PM page not showing blue dot for new PMs
+* Fix Subscription page not showing total posts in subscribed threads
+* Add "Show Avatars" setting to enable/disable display of avatars in the app
+
+1.4.2
+-----------------------------------------------------------------------------
+* Fix issue with iOS 3.1.3 and Forum Runner crashing
+* Move "Settings" into the app!  For main Forum Runner app, choose "Settings"
+  from the home page.  For branded versions of the app, choose "More" then
+  "Settings"
+* Make thread list stop refreshing from the server when you "back" out of a
+  thread
+* Add Green/Red/Yellow status indicators for online while in a thread or on a
+  user's profile (requires forum add-on upgrade)
+* Add "Report" ability for posts (requires forum add-on upgrade)
+* Move "Quote" and "Edit" icons to new menu bar (along with "Report").  To
+  pull this menu up, tap the header of a post.  Future menu items will go
+  here.
+* Support [COLOR], [I], [B] in main thread view (requires forum add-on
+  upgrade)
+* Add new signature settings allowing you to customize your signature
+* Add new forum reading settings to allow you choose if you want to see the
+  first or last post in a thread on thread summary screens
+
+1.4.3
+-----------------------------------------------------------------------------
+* Fix issue with sessions timing out on phpBB when app is in the background
+  for a while (Permission denied issues)
+* Add setting to disable remote thumbnailer (if thumbnails are not showing up
+  in the threads properly)
+* Add new setting to lock Forum Runner in Portrait (Settings->Forum
+  Reading->Lock to Portrait)
+* Add beta support for XenForo forums
+
+1.4.4
+-----------------------------------------------------------------------------
+* Add Vietnamese localization
+* Fix issue with XenForo forums and loading 2nd page of conversations crashing
+* Add support for in-app post "Like" in XenForo forums
+
+1.4.5
+-----------------------------------------------------------------------------
+* Add ability to share posts via Facebook (requires forum add-on upgrade) or
+  E-Mail
+* Modify "Current" menu to have 3 tabs: "Last <x> Days", "Last Visit", and
+  "Participated".
+
+  Last <x> Days - shows all threads from the last # days (this is configurable
+      under Settings->Forum Reading Options->Current # Days Back
+  Last Visit - shows all unread threads since your last visit
+  Participated - shows all threads that you have replied to in the last 3
+      months
+* Add support for "Search Titles Only"
+
+1.4.6
+-----------------------------------------------------------------------------
+* Fix issue with XenForo Conversations tapping the individual item bringing
+  FR to random post view
+* Fix issue on iPhone where if you rotate screen during prefix choice, app
+  becomes unusable
+* Add support for myBB forums
+* Fix issue with "Save to Photo Album" being inadvertently removed
+
+1.4.7
+-----------------------------------------------------------------------------
+* Fix issue with thumbnails viewed in Forum Runner not working with forums
+  with vBulletin thumbnails disabled
+* Add support for native registration via the app (requires forum add-on
+  upgrade)
+* Remove "Login/Logout" menu.  Login now done via buttons on the "Forum" menu,
+  and Logout now done via "Profile" menu
+
+1.5.0
+-----------------------------------------------------------------------------
+* Major UI Overhaul
+* Allow uploads of avatar from your profile by tapping the avatar(1)
+* New profile screen including views to show new profile fields
+* Photo album support(1).  Create albums and upload photos to the gallery!
+* New advanced message editor that allows you to easily manage your
+  attachments as well as post links and your location
+* Attach inline images in the advanced message editor
+* List your favorited subforums inside the app at "Subscribed->Forums"(1)
+* Delete your own posts from Advanced edit screen (if you have permission)(1)
+
+(1) - Requires forum add-on to be updated
+
+1.5.1
+-----------------------------------------------------------------------------
+* Fix issue with XenForo conversation recipients not being readable because of
+  the grey background
+* Fix issue with not being able to delete subscriptions by swiping
+* Fix issue with attachment uploads that end up with an error not being
+  removed from list
+* Add "Refresh Login" setting to "Forum Reading" page.  Allows you to disable
+  the re-login to forum when re-launching Forum Runner from the background.
+
+1.5.2
+-----------------------------------------------------------------------------
+* Fix issue with Ban button showing up in certain scenarios on profile (forum
+  would not allow the ban anyway - just a UI issue)
+* Fix issue with branded apps not saving favorite forums in Subscribed->Forums
+  on app exit
+
+1.5.4
+-----------------------------------------------------------------------------
+* Fix issue with XenForo and Multi-Quote replies crashing
+* Add IP.Board Support
+* Fix issue with subscriptions page reloading at improper times
+
+1.5.5
+-----------------------------------------------------------------------------
+* Fix issue with IP.Board and loading more than the first page of threads in
+  "Current" tabs
+* Add "Clear Stored Logins" to Settings to clear all saved forum credentials
+  from the iOS device's keychain
+* Fix issue with broken images viewed in threads with spaces in URL
+
+1.5.7
+-----------------------------------------------------------------------------
+* iOS 5 compatibility fixes
+
+1.5.9
+-----------------------------------------------------------------------------
+* Fix rendering issues with older generations of iPod/iPhone and Forum Runner
+* Fix issues with iOS 3.x and Forum Runner
+
+1.5.10
+-----------------------------------------------------------------------------
+* Fix issue with "Share" button choices not rendering properly on iPads
+* Add support for "Thanks" mod (if your forum supports it)
+* Add "Copy Link" to in-app browser
+* Various bugfixes
+* Fix issue with "Participated" tab searching by the beginning of your
+  username (on certain forum types)
+* Fix issue with myBB inline attachments not being correct tag
+
+1.5.12
+-----------------------------------------------------------------------------
+* Do not allow "upside down" view on non iPad devices
+* Add setting to change general font size in various locations in app
+
+1.5.13
+-----------------------------------------------------------------------------
+* Sort by post time on "Participated" tab in "Current"
+* Add support for HTTPS forums
+* Various bugfixes
+
+1.5.15
+-----------------------------------------------------------------------------
+* Remove requirement for push notification account on branded apps
+
+1.5.16
+-----------------------------------------------------------------------------
+* Fix issue with "Participated" tab showing only threads you started (on
+  certain forum types)
+
+Android Forum Runner Client
+=============================================================================
+
+1.1.13
+-----------------------------------------------------------------------------
+* Initial release of the Android Forum Runner Client
+
+1.1.14
+-----------------------------------------------------------------------------
+* Fix issue with not entering a page on "jump to page" screen and tapping OK
+  causing a FC
+* Add remote crash code so force closes will send information to Forum Runner
+  development so we can track down bugs easier.
+* Fix a couple FC issues.
+
+1.1.18
+-----------------------------------------------------------------------------
+* Fix some FCs
+
+1.1.20
+-----------------------------------------------------------------------------
+* Fix issue with saving images to SDCARD when viewing in the gallery
+
+1.1.23
+-----------------------------------------------------------------------------
+* Fix issue with announcements not being loaded properly
+* Add support for viewing and voting on polls (this will show a nice chart
+  with current votes)
+* Fix issue with forums that disable attachments completely incorrectly
+  allowing Forum Runner to attach images
+* Fix a few other FCs
+
+1.2.0
+-----------------------------------------------------------------------------
+* Add total number of posts in a thread to the thread summary.  This will be a
+  gray background if no new posts, or a highlighted color background for new
+  posts.
+* Fix issue with some forums and "Parse Error"
+* Fix another couple FCs
+* Add support for forum owners to customize icons and color
+* If a forum has prefixes and does not require them, add "No Prefix" option to
+  selector rather than just relying on "Cancel"
+* Add support to append Forum Runner signature ("Posted from my <device> using
+  Forum Runner").  This can be enabled in Settings.  The forum owner has the
+  option to disable this feature for their forum.
+* Add Setting so that the "Current" menu will fetch new posts since your last
+  visit instead of just getting all posts from the past few days.  You can
+  change this setting in:
+
+  Menu->Settings->New Since Last Visit
+* Add German localization
+
+1.2.1
+-----------------------------------------------------------------------------
+* Fix issue with ad window being displayed even if forum did not have ads
+  configured
+
+1.2.2
+-----------------------------------------------------------------------------
+* Fix issue with multiple subforum favorites overwriting one another
+* Add "Home" menu button in Forum/Thread browsing to bring you back to the
+  main menu (for full Forum Runner app)
+* Add "Thread Summary Shows" option to Settings to allow you to configure if
+  you want thread summaries to show you the first or last post in a thread.
+* Add "Delete as Spam" and "Ban User" to moderation controls.  To delete
+  thread/posts as spam, in a thread, tap menu button, tap "Moderation
+  Menu", tap "Delete Posts" or "Delete Thread", then you will be presented
+  with "Delete as Spam" if you have access.
+
+  To access "Ban User", go to the user's profile you wish to ban and tap "Ban
+  User".
+
+1.2.4
+-----------------------------------------------------------------------------
+* Fix issue with thread subscriptions not showing new post information
+  correctly
+* Fix issue with Ban User through Profile page not working with phpBB
+* Add Vietnamese localization
+
+1.2.5
+-----------------------------------------------------------------------------
+* Fix issue with sending PMs giving "Permission Denied"
+
+1.2.6
+-----------------------------------------------------------------------------
+* Fix issue with some links in posts crashing the app
+* Improve thumbnail support on some forums that were having issues with it
+* Motorola Xoom: Fix splash image issue
+* Motorola Xoom: Fix issue with notification red dot too far away from
+  associated menu icon
+
+1.2.7
+-----------------------------------------------------------------------------
+* Improved memory handling of thumbnails and images in the Gallery view
+* Updated thread view to be constant with the iPhone app - tap the header of a
+  post to bring up a menu of commands for that post (quote, edit, report,
+  like/unlike, select, etc)
+* Add "Like" support for XenForo
+* Add "Report" support
+
+1.2.10
+-----------------------------------------------------------------------------
+* Add support for myBB forums
+* Fix issue with login dialog if both username and password left blank and
+  "Login" pressed
+* Fix issue with crashing on rotation on certain devices
+
+1.2.14
+-----------------------------------------------------------------------------
+* Fix post edit issue
+
+1.2.16
+-----------------------------------------------------------------------------
+* Fix issue with myBB not displaying AdMob ads
+* Fix a few crash issues with certain devices
+
+1.2.19
+-----------------------------------------------------------------------------
+* Add IP.Board Support
+* Various bug fixes
+
+1.3.1
+-----------------------------------------------------------------------------
+* Login/Register button moved to Forum menu
+* New Settings: Light or dark theme, Font Size, Start to Favorites
+* Reorder favorites
+* Add "Last # Days", "Last Visit", "Participated" tabs to Current menu
+* Can upload avatars from profile by tapping your avatar
+* Add favorite forums to Subscribed tab
+* Button to clear cache and stored logins
+* Setting to reorder bottom menu items
+* Insert attachments inline
+* Improved caching of images
+
+1.3.2
+-----------------------------------------------------------------------------
+* Fix issue with subforums on Favorites not jumping to subforum
+
+1.3.4
+-----------------------------------------------------------------------------
+* Various bugfixes
+* Fix issue with refreshing "Current" page
+
+1.3.5
+-----------------------------------------------------------------------------
+* Various bugfixes
+* Add Thanks support for supported forum types
+* Add "Remote Thumbnailer" option (default off) that allows you to use the
+  remote thumbnailer to speed up thread's thumbnail downloads.  Your forum
+  might not support this.
+* Fix issue with myBB inline attachment code being incorrect
+* Add option to upload JPG vs PNG attachments (defaults to JPG)
+
+1.3.9
+-----------------------------------------------------------------------------
+* Add support for google analytic tracking via API
+
+1.3.10
+-----------------------------------------------------------------------------
+* Sort by post time on "Participated" tab in "Current"
+* Fix issue with phpBB boards and editing posts
+* Add support for HTTPS forums
+
+1.3.11
+-----------------------------------------------------------------------------
+* Remove requirement for push notification account on branded apps
+
+1.3.14
+-----------------------------------------------------------------------------
+* Fix issue with "Participated" tab showing only threads you started (on
+  certain forum types)
+
+vBulletin Plug-In
+=============================================================================
+
+1.1
+-----------------------------------------------------------------------------
+* Initial Release of ForumRunner
+
+1.2
+-----------------------------------------------------------------------------
+* Send "last post read" information along with thread
+* Send "Forum Link" information along with forums
+* [VB4.0] Fix issues with "Permission Denied" popups
+
+1.2.1
+-----------------------------------------------------------------------------
+* Fix small issue with push notification script
+
+1.2.2
+-----------------------------------------------------------------------------
+* Add support for post editing
+
+1.2.3
+-----------------------------------------------------------------------------
+* Fix issue with UTF-8 topic titles and push notifications
+* Add support for general board stats
+* Fix issue with Opera Mini
+
+1.2.4
+-----------------------------------------------------------------------------
+* Fix issue with forums with PHP that does not include mbstring functions
+* Fix issue with SEO links in forums
+
+1.2.5
+-----------------------------------------------------------------------------
+* Fix issue with [ATTACH] tags
+
+1.2.6
+-----------------------------------------------------------------------------
+* [VB4.0] Fix issue with thread previews showing BBCodes
+* Fix issue with forums running VBSEO
+
+1.2.7
+-----------------------------------------------------------------------------
+* Minor UI Updates
+
+1.3.0
+-----------------------------------------------------------------------------
+* Add support for Google AdSense links (see
+  http://www.forumrunner.com/forum/showthread.php?t=29 for installation
+  instructions)
+* Add support for Sphinx plugin searching (see
+  http://www.forumrunner.com/forum/showthread.php?t=32 for installation
+  instructions)
+* Add ability to disable Forum Runner detection on supported devices (look in
+  vBulletin Options->Forum Runner Settings)
+* Fix issue with unknown location for people browsing with Forum Runner
+* Fix various searching issues
+* Add support for [YT] and [YOUTUBE] BBCode
+* Add who's online support
+* Fix issue with annuncements showing up multiple times if you "Load More
+  Threads"
+* Honor "Auto Subscription" settings in options when posting thru Forum Runner
+
+1.3.1
+-----------------------------------------------------------------------------
+* Fix issue with international forums with PHP that does not have the mbstring
+  module
+* Add support for AME (Auto Media Encoder) tags
+* Fix issue with certain forums not being able to verify
+
+1.3.2
+-----------------------------------------------------------------------------
+* Fix some push notification issues
+* Fix some searching issues
+
+1.3.3
+-----------------------------------------------------------------------------
+* Fix issues with "Cyb - Advanced Permissions Based on Post Count" add-on and
+  posting new threads/replies/private messages
+* Fix issue with thumbnail display when gd/gd2 is not installed, but
+  imagemagick is
+* Fix issue with forums with threads that haven't been updated in a while
+  not showing up
+* Fix issue with polling for updates from Home Page updating your last login
+  time
+* Add support for different configurable Google AdSense locations
+
+1.3.4
+-----------------------------------------------------------------------------
+* Fix various issues with string encoding when dealing with forums with
+  foreign character sets (such as Arabic)
+
+1.3.5
+-----------------------------------------------------------------------------
+* Fix a few more issues with Arabic forums
+* Fix image thumbnail generation issues on forums without libgd/libgd2
+  installed
+
+1.3.6
+-----------------------------------------------------------------------------
+* Fix a few more issues with internationalization
+* Add support for in-app forum/thread linking (does not punt you to the
+  internal browser when a user links a forum/thread in your forum)
+* Fix issue with forum owners who link to another forum on their site using
+  "Forum Manager->Forum Link"
+* Fix issue with editing a post removes your thread subscription
+* Fix issue with "Subscribed" badge showing incorrect values with forums not
+  using databsae threadmarking
+
+1.3.7
+-----------------------------------------------------------------------------
+* Fix issue with replying to threads sometimes unsubscribing you from the
+  thread
+* Fix issue with push notification badge being incorrect in certain situations
+
+1.3.8
+-----------------------------------------------------------------------------
+* Fix issue with URLs posted via Forum Runner not being parsed/clickable
+
+1.3.9
+-----------------------------------------------------------------------------
+* Fix issue with some push notifications not being sent out for thread
+  subscriptions
+* Fix issue with ignored users showing up in Forum Runner threads
+* Fix conflict with Cyb - Forum Rules add-on
+* Add support for various moderation tasks through Forum Runner (open/close
+  thread, move thread, delete posts, stick/unstick thread) for your moderators
+* Add support for viewing and voting on polls through Forum Runner
+* Add support for Sphinx Searchlight API
+* Fix attachment issue where some image attachments weren't being displayed
+
+1.4.0
+-----------------------------------------------------------------------------
+* Add support for CMS to vBulletin 4.0 sites.  This must be enabled in
+  "vBulletin Options->Enable CMS Support".  Your users will be able to read
+  your articles and post comments if enabled.
+* [VB36] Fix issue with private messages not loading properly/causing a
+  database error
+* Fix issue with some invlaid thread links causing parse errors
+
+1.5.0
+-----------------------------------------------------------------------------
+* Build in Android support
+* Image attachments/links now appear inline as opposed to all bunched up at
+  the bottom of the post
+* Fix issue with "Mark Threads Read" not updating push notification server
+* Revamp of thread summary - add avatar and more information
+* Fix various other minor bugs
+
+1.5.1
+-----------------------------------------------------------------------------
+* Add support for AdMob ads
+* Fix encoding issue for foreign forums
+
+1.5.2
+-----------------------------------------------------------------------------
+* Add support for "Delete as Spam" and "Ban User" for those mods/admins with
+  access
+* Fix issue with soft-deleted threads showing up in thread list/search
+* Add support for showing signatures to users
+* Fix issue with using Arabic characters for login/password
+* Allow administrators to choose forums to exclude from sending to Forum
+  Runner mobile clients.  This is found in vBulletin Options->Forum
+  Runner->Exclude Forums
+
+1.5.3
+-----------------------------------------------------------------------------
+* Fix many issues with forums with foreign character sets (logging in, push
+  notification, moderation, etc)
+* Fix issue with forums that disable attachments completely incorrectly
+  allowing Forum Runner to attach images
+* Fix issue with some threads crashing with iPad clients
+* Add ability to configure which user groups you want to EXCLUDE sending
+  Google AdSense or AdMob ads to
+
+1.6.0
+-----------------------------------------------------------------------------
+* Allow forum owners to configure the color of the navigation bar of their
+  users while browsing their forum.
+* Allow forum owners to provide default 'forum icons' for their
+  forums/subforums - see forumrunner/icons/README.txt
+* Modify 'preview' to show preview of last post in thread rather than first
+* Add ability to enable "Signature" so that your posts will have an optional
+  "Sent from my <device> using Forum Runner" appended.  This can be overridden
+  by the forum owner.
+* Add support for displaying HTML, BBCode markup, and animated smilies
+
+1.6.1
+-----------------------------------------------------------------------------
+* Add support for viewing online status through app
+* Add support for reporting of posts via app
+* Handle [COLOR], [I], [B] BBCodes
+* Add ability for users to choose if they see the last post or first post in
+  thread summary screens
+
+1.6.2
+-----------------------------------------------------------------------------
+* Add support for sharing posts via Facebook
+* Migrate to use the AdMob SDK for iPhone and Android instead of javascript.
+  See the support forums for more information.  Your AdMob publisher ID can
+  now be set in Forum Runner Settings for both iPhone and Android mobile.
+* Add support for Google Analytics tracking of pageviews in the app.  See our
+  support forums for information on how to set this up
+* Add support for "Search Titles Only"
+
+1.6.3
+-----------------------------------------------------------------------------
+* Add support for native registration via the app
+* Added new phrase called 'fr_register_forum_rules' which contains the HTML
+  that is displayed to your mobile users for the forum rules.  Note this is a
+  generic rule phrase and should be modified to suit your forum.
+* Fix issue with Throttle Posts Mod and Forum Runner conflicting
+* Fix issue with post editing
+
+1.7.0
+-----------------------------------------------------------------------------
+* Add support for user avatar uploads from phone
+* Add new profile support with extra information
+* Add support for users to soft delete their own posts (if the forum
+  permissions allow it)
+* Fix issue with "Force Users to Read A Thread" add-on
+
+1.7.1
+-----------------------------------------------------------------------------
+* Fix issue with albums showing up in profiles if feature is disabled
+* Fix issue with long threads causing timeouts in the app
+* Fix issue with some AWC add-ons
+
+1.7.2
+-----------------------------------------------------------------------------
+* Add support for Post Thanks mod @
+    http://www.vbulletin.org/forum/showthread.php?t=231666
+* Various bugfixes
+
+1.7.3
+-----------------------------------------------------------------------------
+* Remove requirement for branded users to have a push notification account
+
+1.7.4
+-----------------------------------------------------------------------------
+* If forum has been removed from the main Forum Runner database, automatically
+  shut off Forum Runner prompt to users
+
+phpBB Plug-In
+=============================================================================
+
+1.0.0
+-----------------------------------------------------------------------------
+* Initial release
+
+1.0.1
+-----------------------------------------------------------------------------
+* Fix issues with Similies
+
+1.0.2
+-----------------------------------------------------------------------------
+* Fix some issues with avatars in profile
+
+1.0.3
+-----------------------------------------------------------------------------
+* Fix issues with earlier versions of phpBB (3.0.5 and earlier) and "Current"
+  menu
+
+1.0.4
+-----------------------------------------------------------------------------
+* Fix a packaging issue
+
+1.0.5
+-----------------------------------------------------------------------------
+* Fix issue with private messages requiring case sensitive usernames
+* Fix issue with "FLOOD_ERROR" being displayed when attempting to send
+  multiple PMs out (even though the flood period was not exceeded)
+* Display correct language errors in private messaging
+
+1.0.6
+-----------------------------------------------------------------------------
+* Fix issue with some push notifications not being sent out for thread
+  subscriptions
+* Fix issue with forums sometimes not showing in the proper order
+* Add support for various moderation tasks through Forum Runner (open/close
+  thread, move thread, delete posts, stick/unstick thread) for your
+  moderators
+* Add support for viewing and voting on polls through Forum Runner
+
+1.1.0
+-----------------------------------------------------------------------------
+* Build in Android support
+* Image attachments/links now appear inline as opposed to all bunched up at
+  the bottom of the post
+* Fix issue with "Mark Threads Read" not updating push notification server
+* Revamp of thread summary - add avatar and more information
+* Fix various other minor bugs
+* Fix issue with older versions of phpbb3 and file attachments
+
+1.1.1
+-----------------------------------------------------------------------------
+* Add support for AdMob ads
+
+1.1.2
+-----------------------------------------------------------------------------
+* Add support for banning of users through app for mods/admins
+* Add support for showing signatures to users
+
+1.2.0
+-----------------------------------------------------------------------------
+* Add support for displaying HTML, BBCode markup, and animated smilies
+* Fix issue with replies via Forum Runner not containing a subject
+
+1.2.1
+-----------------------------------------------------------------------------
+* Add support for viewing online status through app
+* Add support for reporting of posts via app
+* Handle [COLOR], [I], [B] BBCodes
+
+1.2.3
+-----------------------------------------------------------------------------
+* Add support for sharing posts via Facebook
+* Migrate to use the AdMob SDK for iPhone and Android instead of javascript.
+  See the support forums for more information.  Your AdMob publisher ID can
+  now be set in Forum Runner Settings for both iPhone and Android mobile.
+* Add support for "Search Titles Only"
+
+1.3.0
+-----------------------------------------------------------------------------
+* Add support for user avatar uploads from phone
+* Add new profile support with extra information
+* Add support for users to soft delete their own posts (if the forum
+  permissions allow it)
+* Fix issue with "Participated" showing up as posts not threads
+
+1.3.1
+-----------------------------------------------------------------------------
+* Fix issue with user banning permissions
+
+1.3.2
+-----------------------------------------------------------------------------
+* Remove requirement for branded users to have a push notification account
+
+1.3.3
+-----------------------------------------------------------------------------
+* If forum has been removed from the main Forum Runner database, automatically
+  shut off Forum Runner prompt to users
+
+XenForo Plug-In
+=============================================================================
+
+1.0.0
+-----------------------------------------------------------------------------
+* Initial release
+
+1.0.1
+-----------------------------------------------------------------------------
+* Fix yellow header issue
+* Move configuration of header color to Options->Forum Runner
+
+1.0.2
+-----------------------------------------------------------------------------
+* Fix issue with link forums always going to Google
+* Add support for Page forums
+
+1.0.3
+-----------------------------------------------------------------------------
+* Add censorship support (censor conversations, threads, searches, etc) if
+  configured by forum owner
+* Add support for Like and Unlike posts
+* Fix issue with searching for posts through a user's profile returning
+  results from the logged in user
+
+1.0.4
+-----------------------------------------------------------------------------
+* Add support for sharing posts via Facebook
+* Migrate to use the AdMob SDK for iPhone and Android instead of javascript.
+  See the support forums for more information.  Your AdMob publisher ID can
+  now be set in Forum Runner Settings for both iPhone and Android mobile.
+* Add support for Google Analytics tracking of pageviews in the app.  See our
+  support forums for information on how to set this up
+
+1.0.5
+-----------------------------------------------------------------------------
+* Fix issue with "Current" tab not showing any posts when used with XenForo
+  1.0.0 release version
+
+1.0.6
+-----------------------------------------------------------------------------
+* Add support for [tex] tags
+* Fix issue with Search sometimes causing a parse error under certain search
+  conditions
+* Add support for "Search Titles Only"
+
+1.0.7
+-----------------------------------------------------------------------------
+* Add support for XenForo [media] tags (YouTube, Vimeo, Facebook)
+* Links in threads to other threads/forums on your forum will be followed
+  in-app
+* Add support for native registration via the app
+
+1.1.0
+-----------------------------------------------------------------------------
+* Add support for user avatar uploads from phone
+* Add new profile support with extra information
+* Add support for users to soft delete their own posts (if the forum
+  permissions allow it)
+
+1.1.1
+-----------------------------------------------------------------------------
+* Fix issue with users with certain posts-per-page settings causing crash
+  issues
+
+1.1.2
+-----------------------------------------------------------------------------
+* Add support for XenForo 1.1.x Thread Prefixes
+
+1.1.3
+-----------------------------------------------------------------------------
+* Remove requirement for branded users to have a push notification account
+
+1.1.4
+-----------------------------------------------------------------------------
+* If forum has been removed from the main Forum Runner database, automatically
+  shut off Forum Runner prompt to users
+
+myBB Plug-In
+=============================================================================
+
+1.0.0
+-----------------------------------------------------------------------------
+* Initial release
+
+1.0.1
+-----------------------------------------------------------------------------
+* Fix issue with thread prefixes with HTML codes displaying the actual code
+* Fix issue with logins sometimes not working on certain forums
+* Add support for native registration via the app
+* Fix issue with private forums and verification
+
+1.1.0
+-----------------------------------------------------------------------------
+* Add support for user avatar uploads from phone
+* Add new profile support with extra information
+* Fix issue with profile "Find All Posts/Threads" links returning no results
+* Fix issue with subscriptions not showing up if thread is a sticky
+* Various other fixes
+* Add support for users to soft delete their own posts (if the forum
+  permissions allow it)
+
+1.1.1
+-----------------------------------------------------------------------------
+* Fix issue with logging in if you have a background color specified
+
+1.1.2
+-----------------------------------------------------------------------------
+* Fix issue with "no thread specified" popping up when entering a thread in
+  certain occasions
+
+1.1.3
+-----------------------------------------------------------------------------
+* Fix issue with embedded attachments not showing proper thumbnails
+* Fix other various attachment related issues
+
+1.1.4
+-----------------------------------------------------------------------------
+* Fix parse issue with latest myBB and Forum Runner
+
+1.1.5
+-----------------------------------------------------------------------------
+* Remove requirement for branded users to have a push notification account
+
+1.1.6
+-----------------------------------------------------------------------------
+* Fix issues with announcements not showing up (requires app update)
+
+1.1.7
+-----------------------------------------------------------------------------
+* If forum has been removed from the main Forum Runner database, automatically
+  shut off Forum Runner prompt to users
+
+IP.Board Plug-In
+=============================================================================
+
+1.0.0
+-----------------------------------------------------------------------------
+* Initial release
+
+1.0.1
+-----------------------------------------------------------------------------
+* Fix issue with IP.Board 3.2.x and viewing topics in some situations
+
+1.0.2
+-----------------------------------------------------------------------------
+* Properly parse IP.Board attachments in some scenarios
+
+1.0.3
+-----------------------------------------------------------------------------
+* Fix issue with changing the navigation bar color and Android devices
+* Fix issue with servers running magic_quotes_gpc ON and escaped text through
+  Forum Runner
+
+1.0.4
+-----------------------------------------------------------------------------
+* Fix issue with Sphinx API and Forum Runner
+* Fix issue with IP.Board 3.1 not showing smilies properly
+* Fix issue with IP.Board 3.1 showing html code in preview text
+* Fix issue with &amp; showing up in forum names
+* Fix issue with threads showing up as subscribed when they aren't (IP.Board
+  3.1.x add-on issue)
+
+1.0.5
+-----------------------------------------------------------------------------
+* Fix issue with users not being able to reply to threads if they have
+  permission but do not have permission to start new threads in the forum
+
+1.0.6
+-----------------------------------------------------------------------------
+* Make it so first page in "Forums" tab shows categories as section headers
+  and subforums below, rather than requiring user to drill down through
+  categories at the top level.  (Requires latest app version).
+* Fix issue with "online" showing multiple entries sometimes
+
+1.0.7
+-----------------------------------------------------------------------------
+* Fix issue with excluded forums showing up incorrectly
+
+1.0.8
+-----------------------------------------------------------------------------
+* Remove requirement for branded users to have a push notification account
+
+1.0.9
+-----------------------------------------------------------------------------
+* Add support for IP.Board 3.3.x
+
+1.0.10
+-----------------------------------------------------------------------------
+* Fix issue with IP.Board 3.3.x and threads with Attachments
+
+1.0.11
+-----------------------------------------------------------------------------
+* Fix SQL issue in certain scenarios when generating previews for threads
+
+1.0.12
+-----------------------------------------------------------------------------
+* Fix HTML issues with quoting posts in IP.Board 3.4.x
+* If forum has been removed from the main Forum Runner database, automatically
+  shut off Forum Runner prompt to users
+

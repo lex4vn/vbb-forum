@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<navgroups product="iwt_idealchat_pro">
+	<navgroup phrase="iwt_idealchat_idealchat" displayorder="15" hr="true">
+		<navoption displayorder="10">
+			<phrase>iwt_idealchat_cp_general</phrase>
+			<link>options.php?dogroup=iwt_idealchatgen</link>
+		</navoption>
+		<navoption displayorder="20">
+			<phrase>iwt_idealchat_cp_chatrooms</phrase>
+			<link>iwt_idealchat.php?do=chatrooms</link>
+		</navoption>
+	</navgroup>
+</navgroups>

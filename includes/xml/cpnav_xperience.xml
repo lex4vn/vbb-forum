@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<navgroups product="xperience40">
+
+	<navgroup phrase="xperience_name" permissions="canadminusers" displayorder="111">
+		<navoption displayorder="5">
+			<phrase>xperience_admin_info</phrase>
+			<link>xperience_admin.php?do=info</link>
+		</navoption>
+
+		<navoption displayorder="70">
+			<phrase>xperience_admin_recount</phrase>
+			<link>xperience_admin.php?do=recount</link>
+		</navoption>
+
+		<navoption displayorder="75">
+			<phrase>xperience_admin_manpro</phrase>
+			<link>xperience_admin.php?do=manpro</link>
+		</navoption>
+
+		<navoption displayorder="80">
+			<phrase>xperience_admin_manawards</phrase>
+			<link>xperience_admin.php?do=manawards</link>
+		</navoption>
+		
+		<navoption displayorder="85">
+			<phrase>xperience_admin_manach</phrase>
+			<link>xperience_admin.php?do=manach</link>
+		</navoption>
+		
+		<navoption displayorder="100">
+			<phrase>xperience_admin_mancpoints</phrase>
+			<link>xperience_admin.php?do=mancpoints</link>
+		</navoption>
+		
+		<navoption displayorder="120">
+			<phrase>xperience_admin_delactivities</phrase>
+			<link>xperience_admin.php?do=delactivities</link>
+		</navoption>
+
+		<navoption displayorder="130">
+			<phrase>xperience_admin_delstats</phrase>
+			<link>xperience_admin.php?do=delstats</link>
+		</navoption>
+
+		<navoption displayorder="140">
+			<phrase>xperience_admin_stats_level</phrase>
+			<link>xperience_admin.php?do=stats</link>
+		</navoption>
+		
+		<navoption displayorder="150">
+			<phrase>xperience_admin_importlevel</phrase>
+			<link>plugin.php?do=productadd</link>
+		</navoption>
+		
+		<navoption displayorder="160">
+			<phrase>diagnostics</phrase>
+			<link>diagnostic.php?do=list</link>
+		</navoption>			
+
+	</navgroup>
+
+</navgroups>
+

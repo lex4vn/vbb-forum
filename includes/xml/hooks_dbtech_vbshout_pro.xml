@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hooks>
+
+	<hooktype type="dbtech_vbshout">
+		<hook>dbtech_vbshout_maintenance</hook>
+	</hooktype>
+	
+</hooks>
